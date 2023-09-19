@@ -275,11 +275,114 @@ function task710(data) {
 task710(posts)
 
 // 7.11. Gauti pirmą masyvo narį ir į konsolę išvesti jo property "title" reikšmę.
+
+function task711(data) {
+    if (data.length > 0) {
+      return `Title: ${data[0].title}`
+    } else {
+      return 'There is no this element in array'
+    }
+  }
+  console.log(task711(posts))
+
+
 // 7.12. Gauti antrą masyvo narį ir į konsolę išvesti jo property "body" reikšmę.
+
+function task712(data) {
+    if (data.length > 0) {
+      return `Body: ${data[1].body}`
+    } else {
+      return 'There is no this element in array'
+    }
+  }
+  console.log(task712(posts))
+
 // 7.13. Gauti trečią masyvo narį ir į konsolę išvesti jo property "title" ir "body" reikšmes tokiu formatu: Post title is: 'post title' and the content is: 'post content'.
+function task713(data) {
+    if (data.length > 0) {
+      return `Post title is: ${data[2].title} and the content is: ${data[2].body}`
+    } else {
+      return 'There is no this element in array'
+    }
+  }
+  console.log(task713(posts))
+
 // 7.14. Išvesti visus masyvo narius į konsolę.
+
+function task714(data) {
+    if (data.length > 0) {
+        data.map((post) => {
+        console.log(post)
+    }) 
+    } else {
+        console.log('There is no this element in array')
+    }
+}
+task714(posts)
+
 // 7.15. Išvesti visų masyvo narių property "title" į konsolę.
+function task715(data) {
+    if (data.length > 0) {
+        data.map((post) => {
+        console.log(post.title)
+    }) 
+    } else {
+        console.log('There is no this element in array')
+    }
+}
+task715(posts)
+
 // 7.16. Išvesti visų masyvo narių property "body" į konsolę.
+function task716(data) {
+    if (data.length > 0) {
+        data.map((post) => {
+        console.log(post.body)
+    }) 
+    } else {
+        console.log('There is no this element in array')
+    }
+}
+task716(posts)
+
 // 7.17. Išvesti visų masyvo narių property "title" ir "body" į konsolę tokiu formatu: Title: "post title". Content: "post content".
+function task717(data) {
+    if (data.length > 0) {
+        data.map((post) => {
+        let output = `Title: ${post.title}. Content: ${post.body}.`
+        console.log(output)
+    }) 
+    } else {
+        console.log('There is no this element in array')
+    }
+}
+task717(posts)
+
 // 7.18. Išvesti pirmų keturių masyvo narių property "title" ir "body" į konsolę tokiu formatu: Title: "post title". Content: "post content".
+function task718(data) {
+    if (data.length > 0) {
+        let firstFourElements = task76(data)
+        firstFourElements.map((post) => {
+        let output = `Title: ${post.title}. Content: ${post.body}.`
+        console.log(output)
+    }) 
+    } else {
+        console.log('There is no this element in array')
+    }
+}
+task718(posts)
+
+
 // 7.19. Išvesti paskutinių septynių masyvo narių property "title" ir "body" į konsolę tokiu formatu: Title: "post title". Content: "post content".
+
+function task719(data) {
+    if (data.length > 0) {
+        let lastSevenElements = data.slice(-7)
+        lastSevenElements.map((post) => {
+        let output = `Title: ${post.title}. Content: ${post.body}.`
+        console.log(output)
+    }) 
+    } else {
+        console.log('There is no this element in array')
+    }
+}
+task719(posts)
