@@ -512,7 +512,7 @@ function task728(data) {
     let ulElement728 = document.querySelector('#task-728')
 
     for (let i = 0; i < posts.length; i++) {
-        let contentWords = posts[i].body.split('')
+        let contentWords = posts[i].body.split(' ')
         if (contentWords.includes('sit')) {
             let li = document.createElement('li')
             li.textContent = `Content: ${posts[i].body}.`
@@ -520,11 +520,49 @@ function task728(data) {
         }  
     }
 }
-task728()
+// task728()
 
 
 // 7.29. HTML faile sukurti ul elementą ir tokiu pačiu formatu, kaip ankstesnėje užduotyje, išvesti tik tuos masyvo narius, kurių pavadinimas turi daugiau nei 3 "a" raides, o "body" turi mažiau nei 7 "o" raides.
 
+function task729(data) {
+    let ulElement729 = document.querySelector('#task-729')
+
+    for (let i = 0; i < posts.length; i++) {
+
+        let titleWords = posts[i].title.split('')
+        let contentWords = posts[i].body.split('')
+        
+        let matchTitleWords = titleWords.filter(letter => letter === 'a');
+        let matchContentWords = contentWords.filter(letter => letter === 'o');
+
+        if (matchTitleWords.length > 3 && matchContentWords.lenght < 7) {
+            let li = document.createElement('li')
+            li.textContent = `Title: ${posts[i].title}. Content: ${posts[i].body}.`
+            ulElement729.append(li)
+        }  
+    }
+}
+// task729()
+
+
 
 
 // 7.30. HTML faile sukurti ul elementą ir tokiu pačiu formatu, kaip ankstesnėje užduotyje, išvesti visų masyvo narių pavadinimus surūšiuotus nuo mažiausiai iki daugiausiai raidžių "body" property turinčių narių. Papildomai, prie išvesto teksto pridėti ir "body" raidžių skaičių.
+function task730(){
+    let ul = document.querySelector('ul')
+
+    posts.sort(function(a, b) {
+      return a.body.length - b.body.length
+    })
+
+    for(let i = 0; i < posts.length; i++){
+        let title = posts[i].title
+        let body = posts[i].body
+
+          let li = document.createElement('li')
+          li.textContent = `Title: "${title}". Content: "${body}".`
+          ul.append(li)
+    }
+  }
+  task730()
