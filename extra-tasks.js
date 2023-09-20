@@ -497,7 +497,6 @@ function task727(data) {
     let ulElement727 = document.querySelector('#task-727')
 
     for (let i = 0; i < posts.length; i++) {
-        // if (posts[i].title.length > 20 && posts[i].title.length < 30 && posts[i].body.length > 70 && posts[i].body.length < 130) {
         if (posts[i].title.includes('it') && posts[i].body.includes('quo')) {
             let li = document.createElement('li')
             li.textContent = `Title: ${posts[i].title}. Content: ${posts[i].body}.`
@@ -508,6 +507,24 @@ function task727(data) {
 // task727()
 
 // 7.28. HTML faile sukurti ul elementą ir tokiu pačiu formatu, kaip ankstesnėje užduotyje, išvesti tik tuos masyvo narius, kurių "body" turi žodį "sit". Jeigu žodis turi šį simbolių junginį, tačiau tai nėra pilna jo reikšmė (pvz. žodžiai "sitto" ar "quasit"), jie neturėtų būti atvaizduojami.
+
+function task728(data) {
+    let ulElement728 = document.querySelector('#task-728')
+
+    for (let i = 0; i < posts.length; i++) {
+        let contentWords = posts[i].body.split('')
+        if (contentWords.includes('sit')) {
+            let li = document.createElement('li')
+            li.textContent = `Content: ${posts[i].body}.`
+            ulElement728.append(li)
+        }  
+    }
+}
+task728()
+
+
 // 7.29. HTML faile sukurti ul elementą ir tokiu pačiu formatu, kaip ankstesnėje užduotyje, išvesti tik tuos masyvo narius, kurių pavadinimas turi daugiau nei 3 "a" raides, o "body" turi mažiau nei 7 "o" raides.
+
+
 
 // 7.30. HTML faile sukurti ul elementą ir tokiu pačiu formatu, kaip ankstesnėje užduotyje, išvesti visų masyvo narių pavadinimus surūšiuotus nuo mažiausiai iki daugiausiai raidžių "body" property turinčių narių. Papildomai, prie išvesto teksto pridėti ir "body" raidžių skaičių.
